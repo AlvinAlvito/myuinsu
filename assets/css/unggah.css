@@ -1,0 +1,9 @@
+.page {
+    display: none;
+}
+.page-active {
+    display: flex;
+}
+#submit-btn {
+    display: none;
+}

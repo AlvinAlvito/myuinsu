@@ -1,0 +1,441 @@
+/* Google Font Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  margin: 0;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  background-image: url('https://tracerstudy.uinsu.ac.id/img/bg.jpg');
+  background-repeat: no-repeat;
+
+
+}
+nav{
+  z-index:99;
+  position: fixed;
+  padding:0 6vw;
+  top: 0;
+  height: 70px;
+  width: 100vw;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  overflow: hidden;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2);
+}
+nav img{
+  width: 6rem;
+}
+nav ul{
+  display:flex;
+
+}
+nav ul li{
+  margin:5px 12px;
+  font-size:1.1rem;
+  cursor: pointer;
+  list-style: none;
+}
+nav ul li a{
+  color:#000;
+}
+nav ul li:hover{
+  color:green;
+}
+
+.active-nav{
+  color:green !important;
+}
+.bottom-nav{
+  display: none ;
+}
+.navbar {
+  z-index:99;
+  position: fixed;
+  bottom: 0;
+  height: 83px;
+  width: 100vw;
+  background: #fff;
+  border-radius: 5px 5px 0 0; 
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 -5px 10px rgb(221 221 221 / 15%);
+
+}
+
+.navbar ul {
+  position: relative;
+  display: flex;
+}
+
+.navbar ul li {
+  position: relative;
+  list-style-type: none;
+
+}
+
+.navbar ul li a {
+  position: relative;
+  height: 70px;
+  margin-bottom: 7px;
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.navbar ul li a i {
+  position: absolute;
+  font-size: 38px;
+  color: rgb(1 130 54);
+}
+
+ul li a i.activeIcon {
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.6s ease;
+  transition-delay: 0.2s;
+}
+
+.navbar ul li.active a i {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.navbar ul .indicator {
+  position: absolute;
+  bottom: -19px;
+  left: -327px;
+  height: 36px;
+  width: 25px;
+  background: rgb(1 130 54);
+  border-radius: 50%;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+ul .indicator::before {
+  content: "";
+  position: absolute;
+  left: -15px;
+  bottom: 50%;
+  height: 22px;
+  width: 20px;
+  background: #fff;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0 10px 0 rgb(1 130 54);
+}
+
+ul .indicator::after {
+  content: "";
+  position: absolute;
+  right: -15px;
+  bottom: 50%;
+  height: 22px;
+  width: 20px;
+  background: #fff;
+  border-bottom-left-radius: 20px;
+  box-shadow: 0 10px 0 rgb(1 130 54);
+}
+@media only screen and (max-width: 600px){
+  .top-nav{
+    display: none;
+  }
+  .bottom-nav{
+    display:flex;
+  }
+}
+
+.carousel a{
+  text-decoration:none;
+  color:#ffffff94;
+  background:#147704d6;
+  border-radius:4px;
+  padding: 3px 8px;
+  font-size: .9rem;
+}
+.carousel a:hover{
+  background:#ffffff94;
+  color:#147704d6;
+
+}
+.container{
+  z-index:11;
+  margin:2vh;
+  position: relative;
+  max-width: 850px;
+  width: 100%;
+  background: #fff;
+  padding: 17px 30px 40px 30px;
+  border-radius:5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  perspective: 2700px;
+}
+.container .cover{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 50%;
+  z-index: 98;
+  transition: all 1s ease;
+  transform-origin: left;
+  transform-style: preserve-3d;
+}
+.container #flip:checked ~ .cover{
+  transform: rotateY(-180deg);
+}
+ .container .cover .front,
+ .container .cover .back{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.cover .back{
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+.container .cover::before,
+.container .cover::after{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #002865;
+  opacity: 0.5;
+  z-index: 12;
+}
+.container .cover::after{
+  opacity: 0.3;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+.container .cover img{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 10;
+}
+.container .cover .text{
+  position: absolute;
+  font-family:'arial';
+  padding:10px 10% 0px 10%;
+  z-index: 130;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.cover .text .text-1,
+.cover .text .text-2{
+  font-size: 26px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+.cover .text .text-2{
+  font-size: 15px;
+  font-weight: 500;
+}
+.container .forms{
+  height: 100%;
+  width: 100%;
+  background: #fff;
+}
+
+.container .form-content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.form-content .login-form,
+.form-content .signup-form{
+  width: calc(100% / 2 - 25px);
+}
+.forms .form-content .title{
+  position: relative;
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+}
+.forms .form-content .title:before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 25px;
+  background: #0f8102;
+}
+.forms .signup-form  .title:before{
+  width: 20px;
+}
+.forms .form-content .input-boxes{
+  margin-top: 30px;
+}
+.forms .form-content .input-box{
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  margin: 10px 0;
+  position: relative;
+}
+.form-content .input-box input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 0 30px;
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 2px solid rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+.form-content .input-box input:focus,
+.form-content .input-box input:valid{
+  border-color: #0f8102;
+}
+.form-content .input-box i{
+  position: absolute;
+  color: #0f8102;
+  font-size: 17px;
+}
+.forms .form-content .text{
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+.forms .form-content .text a{
+  text-decoration: none;
+}
+.forms .form-content .text a:hover{
+  text-decoration: underline;
+}
+.forms .form-content .button{
+  color: #fff;
+  margin-top: 40px;
+}
+.forms .form-content .button input{
+  color: #fff;
+  background: #0f8102;
+  border-radius: 6px;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.forms .form-content .button input:hover{
+  background: #0f8102;
+}
+.forms .form-content label{
+  color: #0f8102;
+  cursor: pointer;
+}
+.forms .form-content label:hover{
+  text-decoration: underline;
+}
+.forms .form-content .login-text,
+.forms .form-content .sign-up-text{
+  text-align: center;
+  margin-top: 25px;
+}
+.container #flip{
+  display: none;
+}
+@media (max-width: 730px) {
+  .container .cover{
+    display: none;
+  }
+  .form-content .login-form,
+  .form-content .signup-form{
+    width: 100%;
+  }
+  .form-content .signup-form{
+    display: none;
+  }
+  .container #flip:checked ~ .forms .signup-form{
+    display: block;
+  }
+  .container #flip:checked ~ .forms .login-form{
+    display: none;
+  }
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col-2, .col-3 {
+  flex: 1;
+  
+}
+.col-2{
+  padding-top:19px;
+}
+.col-3{
+  text-align:right;
+
+}
+
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+img {
+  width: 100px;
+}
+
+.text {
+  position: relative;
+}
+
+.carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.controls i {
+  font-size: 24px;
+  cursor: pointer;
+  color: white; /* Set button color to white */
+}
+
+.prev {
+  margin-left: 15px;
+}
+
+.next {
+  margin-right: 15px;
+}
+

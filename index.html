@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>My UINSU</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-5.0.0-beta2.min.css" />
+    <link rel="stylesheet" href="/assets/css/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/css/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/lindy-uikit.css" />
+    <link rel="stylesheet" href="/assets/css/animate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+
+    <link href="/assets/css/pencarian.css" rel="stylesheet">
+
+    <link href="/assets/css/unggah.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <div class="loader-container" id="loader-container">
+        <div class="loader"></div>
+        <div class="text-loader">My UINSU </div>
+    </div>
+
+    <nav id="nav" class="shadow-sm">
+        <div class="logo">
+            <img src="/assets/img/logo.png" alt="">
+        </div>
+        <ul class="top-nav">
+            <li><a class="{{ request()->is('/') ? 'active-nav' : '' }}" onclick="window.location.href='/';">Beranda</a>
+            </li>
+            <li><a class="{{ request()->is('arsip') ? 'active-nav' : '' }}"
+                    onclick="window.location.href='/Tentang';">Tentang</a></li>
+            <li><a class="{{ request()->is('pencarian') ? 'active-nav' : '' }}"
+                    onclick="window.location.href='/pencarian';">Layanan</a></li>
+            <li><a class="{{ request()->is('unggah') ? 'active-nav' : '' }}"
+                    onclick="window.location.href='/unggah';">Bantuan</a></li>
+
+            <li>
+                <a class="{{ request()->is('dashboard') ? 'active-nav' : '' }}"
+                    onclick="window.location.href='/dashboard';">Dashboard</a>
+            </li>
+
+            <li>
+                <a onclick="window.location.href='/login';">Login</a>
+            </li>
+
+
+        </ul>
+        <div class="profile">
+
+
+            <img class="rounded-circle" src="/assets/img/account.png" alt="" style="width: 35px; height: 35px;">
+
+        </div>
+
+    </nav>
+    <div class="navbar bottom-nav">
+        <ul>
+            <li class="active">
+                <a onclick="window.location.href='{{ url('/') }}'">
+                    <i class='bx bx-home icon'></i>
+                    <i class='bx bxs-home activeIcon'></i>
+                </a>
+            </li>
+            <li class="{{ request()->is('arsip') ? 'active' : '' }}">
+                <a onclick="window.location.href='{{ url('/arsip') }}'">
+                    <i class='bi bi-layers icon'></i>
+                    <i class='bi bi-layers-fill activeIcon'></i>
+                </a>
+            </li>
+            <li class="{{ request()->is('pencarian') ? 'active' : '' }}">
+                <a onclick="window.location.href='{{ url('/pencarian') }}'">
+                    <i class='bi bi-grid icon'></i>
+                    <i  class='bi bi-grid-fill activeIcon'></i>
+                </a>
+            </li>
+            <li class="{{ request()->is('unggah') ? 'active' : '' }}">
+                <a onclick="window.location.href='{{ url('/unggah') }}'">
+                    <i  class='bi bi-chat-square-text icon'></i>
+                    <i class='bi bi-chat-square-text-fill activeIcon'></i>
+                </a>
+            </li>
+            <li class="{{ request()->is('unggah') ? 'active' : '' }}">
+                <a onclick="window.location.href='{{ url('/dashboard') }}'">
+                    <i class='bi bi-person icon'></i>
+                    <i class='bi bi-person-fill activeIcon'></i>
+                </a>
+            </li>
+            <div class="indicator"></div>
+        </ul>
+    </div>
+
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content animate__animated animate__fadeInLeft wow" data-wow-duration="2s">
+                        <span class="  fs-5 text-dark"> Selamat Datang Di
+                            Website</span>
+                        <div class="image-container">
+                            <img id="myuinsu" src="/assets/img/myuinsu.png" alt="">
+                        </div>
+
+                        </h1>
+                        <p>MY UINSU adalah website yang menjadi pusat dan penghubung pengguna dari Universitas Islam
+                            Negeri Sumatera Utara baik mahasiswa, dosen, maupun pegawai</p>
+                        <div class="about-counter mt-50 ">
+                            <div class="row">
+                                <div class="col-sm-4 ">
+                                    <div class="single-counter counter-color-1 d-flex wow fadeInUp"
+                                        data-wow-duration="1s" data-wow-delay="0.3s">
+                                        <div class="counter-shape">
+                                            <span class="shape-1"></span>
+                                            <span class="shape-2"></span>
+                                        </div>
+                                        <div class="counter-content media-body">
+                                            <div class="counter-count">
+                                                <div class="counter" id="clientsCount">22118</div>
+                                            </div>
+                                            <p class="text">Mahasiswa</p>
+                                        </div>
+                                    </div> <!-- single counter -->
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="single-counter counter-color-2 d-flex wow fadeInUp"
+                                        data-wow-duration="1s" data-wow-delay="0.6s">
+                                        <div class="counter-shape">
+                                            <span class="shape-1"></span>
+                                            <span class="shape-2"></span>
+                                        </div>
+                                        <div class="counter-content media-body">
+                                            <div class="counter-count">
+                                                <div class="counter" id="satisfactionCount">603</div>
+                                            </div>
+                                            <p class="text">Dosen</p>
+                                        </div>
+                                    </div> <!-- single counter -->
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="single-counter counter-color-3 d-flex wow fadeInUp"
+                                        data-wow-duration="1s" data-wow-delay="0.9s">
+                                        <div class="counter-shape">
+                                            <span class="shape-1"></span>
+                                            <span class="shape-2"></span>
+                                        </div>
+                                        <div class="counter-content media-body">
+                                            <div class="counter-count">
+                                                <div class="counter" id="projectsCount">565</div>
+                                            </div>
+                                            <p class="text">Pegawai</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-img animate__animated animate__fadeInRight wow" data-wow-duration="1.5s">
+                        <div class="hero-figure-box hero-figure-box-09"></div>
+                        <div class="hero-figure-box hero-figure-box-07"></div>
+                        <div class="hero-figure-box hero-figure-box-08 " data-wow-delay=".5s" data-rotation="-22deg"
+                            style="transform: rotate(-22deg) scale(1); opacity: 1;"></div>
+                        <img src="assets/img/gedung.png" alt="" class="wave-animation-2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tentang" class="about-section pt-50 pb-50">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6 order-1" id="content-1">
+                    <div class="about-img text-lg-right animate__animated animate__fadeInUp wow"
+                        data-wow-duration="1.5s">
+                        <img src="assets/img/hero-3.svg" alt="">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6" id="content-2">
+                    <div class="about-content animate__animated animate__fadeInUp wow" data-wow-duration="1.5s">
+                        <div class="section-title ">
+                            <h1 class="mb-25  ">Informasi Tentang My UINSU</h1>
+                            <p class=" ">MY UINSU adalah website yang menjadi pusat dan penghubung antara Universitas Islam Negeri Sumatera Utara dengan mahasiswa, alumni, dosen, maupun pegawai</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row " style="justify-content: center">
+                <div class="col-10">
+                    <div class="accordion    shadow  animate__animated animate__fadeInUp wow" data-wow-duration="1.5s"
+                        id="accordionExample" style="visibility: visible; animation-delay: 0.2s; ">
+                        <div class="single-faq">
+                            <button class="w-100 ps-4 text-start collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <h3>Informasi Selengkapnya</h3>
+                            </button>
+
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                data-bs-parent="#accordionExample">
+
+                                <div class="faq-content d-flex flex-wrap" style="text-align: justify;">
+                                    <p class=" ">Jenis koleksi tersebut meliputi:
+                                        semua hasil karya dosen UIN Sumatera Utara dalam bentuk buku, jurnal ilmiah,
+                                        laporan penelitian, proceeding konferensi, buku ajar, laporan kegiatan
+                                        pengabdian masyarakat, dan lain sebagainya; Karya mahasiswa meliputi:
+                                        skripsi, thesis, disertasi, laporan kerja lapangan; Dokumen kegiatan
+                                        pimpinan meliputi: naskah pidato rektor pada berbagai event, poto
+                                        dokumentasi kegiatan UIN Sumatera Utara.</p>
+                                    <p class=" ">Repository ini juga memuat karya
+                                        ilmiah yang ditulis oleh penulis luat UIN Sumatera Utara yang diterbitkan
+                                        pada karya cetak atau publikasi UIN Sumatera Utara seperti misalnya artikel
+                                        yang dimuat dalam Online Jurnal System (OJS). Dengan tersedianya Repository
+                                        UIN Sumatera Utara ini diharapkan bukan saja menjadi wadah karya intelektual
+                                        civitas akademika dan memberikan akses informasi yang luas kepada public,
+                                        tetapi juga sekaligus dapat meningkatkan ranking UIN Sumatera Utara pada
+                                        Webometric perguruan tinggi tingkat nasional maupun dunia.</p>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing-section pricing-style-4 "  style="background: url('/assets/img/bg2.jpg');">
+        <div class="container content">
+            <div class="row align-items-center">
+                <div class="col-xl-5 col-lg-6">
+                    <div class="section-title mb-60 animate__animated animate__fadeInUp wow" data-wow-duration="1.5s">
+                        <h3 class="mb-15  ">Aplikasi Layanan</h3>
+                        <p class=" ">UIN Sumatera Utara Memiliki Banyak Layanan Aplikasi
+                            Dalam Mengelola dan Memanajemen Sistem Yang Ada Dikampus</p>
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-6">
+                    <div class="pricing-active-wrapper  animate__animated animate__fadeInUp wow"
+                        data-wow-duration="1.5s">
+                        <div class="pricing-active">
+                            <div class="single-pricing-wrapper">
+                                <div class="single-pricing">
+                                    <h4>Portal SIA</h4>
+                                    <h3><i class="bi bi-gear"></i></h3>
+                                    <p>Menangani Sistem Informasi Akademik Dosen dan Mahasiswa UINSU</p>
+                                    <a href="https://portalsia.uinsu.ac.id " target="_blank"
+                                        class="button radius-30 mt-2">Kunjungi <i
+                                            class="lni lni-angle-double-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="single-pricing-wrapper">
+                                <div class="single-pricing">
+                                    <h4>SI-PMB</h4>
+                                    <h3><i class="bi bi-person-bounding-box"></i></h3>
+                                    <p>Menangani Sistem Informasi Penerimaan Mahasiswa Baru UIN Sumatera Utara</p>
+                                    <a href="https://sipmb.uinsu.ac.id " target="_blank"
+                                        class="button radius-30 mt-2">Kunjungi <i
+                                            class="lni lni-angle-double-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="single-pricing-wrapper">
+                                <div class="single-pricing">
+                                    <h4>SI-MABA</h4>
+                                    <h3><i class="bi bi-person-standing"></i></h3>
+                                    <p>Menangani Sistem Informasi Daftar Ulang Mahasiswa Baru UIN Sumatera Utara</p>
+                                    <a href="https://maba.uinsu.ac.id " target="_blank"
+                                        class="button radius-30 mt-2">Kunjungi <i
+                                            class="lni lni-angle-double-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="single-pricing-wrapper">
+                                <div class="single-pricing">
+                                    <h4>SI-SELMA</h4>
+                                    <h3><i class="bi bi-person-circle"></i></h3>
+                                    <p>Menangani Sistem Informasi Surat Elektronik Mahasiswa UIN Sumatera Utara</p>
+                                    <a href="https:// .uinsu.ac.id " target="_blank"
+                                        class="button radius-30 mt-2">Kunjungi <i
+                                            class="lni lni-angle-double-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="single-pricing-wrapper">
+                                <div class="single-pricing">
+                                    <h4>SI-LIANA</h4>
+                                    <h3><i class="bi bi-check2-all"></i></h3>
+                                    <p>Menangani Sistem Informasi Kuliah Kerja Nyata UIN Sumatera Utara</p>
+                                    <a href="https://siselma.uinsu.ac.id " target="_blank"
+                                        class="button radius-30 mt-2">Kunjungi <i
+                                            class="lni lni-angle-double-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="single-pricing-wrapper">
+                                <div class="single-pricing">
+                                    <h4>E-LEARNING</h4>
+                                    <h3><i class="bi bi-mortarboard-fill"></i></h3>
+                                    <p>Menangani Sistem Informasi Pembelajaran Online UIN Sumatera Utara</p>
+                                    <a href="https://elearning.uinsu.ac.id " target="_blank"
+                                        class="button radius-30 mt-2">Kunjungi <i
+                                            class="lni lni-angle-double-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="single-pricing-wrapper">
+                                <div class="single-pricing">
+                                    <h4>SI-JURNAL</h4>
+                                    <h3><i class="bi bi-journals"></i></h3>
+                                    <p>Menangani Tentang Sistem Informasi Jurnal UIN Sumatera Utara</p>
+                                    <a href="https://sijurnal.uinsu.ac.id " target="_blank"
+                                        class="button radius-30 mt-2">Kunjungi <i
+                                            class="lni lni-angle-double-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="single-pricing-wrapper">
+                                <div class="single-pricing">
+                                    <h4>SI-LIBRARY</h4>
+                                    <h3><i class="bi bi-book-half"></i></h3>
+                                    <p>Menangani Website Perpustakaan UIN Sumatera Utara</p>
+                                    <a href="https://silibrary.uinsu.ac.id " target="_blank"
+                                        class="button radius-30 mt-2">Kunjungi <i
+                                            class="lni lni-angle-double-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="single-pricing-wrapper">
+                                <div class="single-pricing">
+                                    <h4>REPOSITORY</h4>
+                                    <h3><i class="bi bi-bookmarks-fill"></i></h3>
+                                    <p>Menangani Sistem Informasi My UIN Sumatera Utara</p>
+                                    <a href="https://repository.uinsu.ac.id " target="_blank"
+                                        class="button radius-30 mt-2">Kunjungi <i
+                                            class="lni lni-angle-double-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="single-pricing-wrapper">
+                                <div class="single-pricing">
+                                    <h4>SI-PUSAKA</h4>
+                                    <h3><i class="bi bi-chat-square-dots-fill"></i></h3>
+                                    <p>Menangani Sistem Informasi Pengajuan Surat Bebas Pustaka UIN Sumatera Utara</p>
+                                    <a href="https://sipusaka.uinsu.ac.id " target="_blank"
+                                        class="button radius-30 mt-2">Kunjungi <i
+                                            class="lni lni-angle-double-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="single-pricing-wrapper">
+                                <div class="single-pricing">
+                                    <h4>SI-RASIDA</h4>
+                                    <h3><i class="bi bi-mortarboard"></i></h3>
+                                    <p>Menangani Sistem Informasi Pendaftaran Sidang dan Wisuda UINSU</p>
+                                    <a href="https://sirasida.uinsu.ac.id " target="_blank"
+                                        class="button radius-30 mt-2">Kunjungi <i
+                                            class="lni lni-angle-double-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="single-pricing-wrapper">
+                                <div class="single-pricing">
+                                    <h4>SI-KIP</h4>
+                                    <h3><i class="bi bi-person-vcard-fill"></i></h3>
+                                    <p>Menangani Sistem Informasi Penjaringan Beasiswa KIP UIN Sumatera Utara</p>
+                                    <a href="https://kip.uinsu.ac.id " target="_blank"
+                                        class="button radius-30 mt-2">Kunjungi <i
+                                            class="lni lni-angle-double-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="single-pricing-wrapper">
+                                <div class="single-pricing">
+                                    <h4>UMM</h4>
+                                    <h3><i class="bi bi-pencil-square"></i></h3>
+                                    <p>Menangani Sistem Informasi Ujian Masuk Mandiri Online UIN Sumatera Utara</p>
+                                    <a href="https://umm.uinsu.ac.id " target="_blank"
+                                        class="button radius-30 mt-2">Kunjungi <i
+                                            class="lni lni-angle-double-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="single-pricing-wrapper">
+                                <div class="single-pricing">
+                                    <h4>SI-DAHLIA</h4>
+                                    <h3><i class="bi bi-info-circle-fill"></i></h3>
+                                    <p>Menangani Sistem Informasi Daftar Hadir Kuliah UIN Sumatera Utara</p>
+                                    <a href="https://.uinsu.ac.id " target="_blank"
+                                        class="button radius-30 mt-2">Kunjungi <i
+                                            class="lni lni-angle-double-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="single-pricing-wrapper">
+                                <div class="single-pricing">
+                                    <h4>SI-BEDJO</h4>
+                                    <h3<i class="bi bi-person-video3"></i></h3>
+                                        <p>Menangani Sistem Informasi Beban Kinerja Dosen UIN Sumatera Utara</p>
+                                        <a href="https://sibedjo.uinsu.ac.id " target="_blank"
+                                            class="button radius-30 mt-2">Kunjungi <i
+                                                class="lni lni-angle-double-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="single-pricing-wrapper">
+                                <div class="single-pricing">
+                                    <h4>SI-RALINE</h4>
+                                    <h3><i class="bi bi-person-check"></i></h3>
+                                    <p>Menangani Sistem Informasi Presensi Online UIN Sumatera Utara</p>
+                                    <a href="https://siraline.uinsu.ac.id " target="_blank"
+                                        class="button radius-30 mt-2">Kunjungi <i
+                                            class="lni lni-angle-double-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="single-pricing-wrapper">
+                                <div class="single-pricing">
+                                    <h4>LKP</h4>
+                                    <h3><i class="bi bi-person-fill-gear"></i></h3>
+                                    <p>Menangani Sistem Informasi Laporan Kinerja UIN Sumatera Utara</p>
+                                    <a href="https://lkp.uinsu.ac.id " target="_blank"
+                                        class="button radius-30 mt-2">Kunjungi <i
+                                            class="lni lni-angle-double-right"></i></a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pencarian" class="about-section pt-10 pb-10">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6" id="content-3">
+                    <div class="about-img text-lg-right  animate__animated animate__fadeInUp wow"
+                        data-wow-duration="1.5s">
+                        <img src="assets/img/search-3.svg" alt="">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6" id="content-4">
+                    <div class="about-content animate__animated animate__fadeInUp wow" data-wow-duration="1.5s">
+                        <div class="section-title mb-30">
+                            <h1 class="mb-25  ">Temukan Dokumen di Arsip UIN Sumatera
+                                Utara</h1>
+                            <p class=" ">Anda Ingin Mecari Dokumen di Arsip Universitas
+                                Islam Negeri Sumatera Utara Dengan Cepat? Kunjungi dan Lakukan Pencarian Cepat dan Mudah
+                                disini</p>
+                        </div>
+
+                        <a href="/pencarian" onclick="window.location.href='/pencarian'"
+                            class="button  mt-20 radius-10  ">Pencarian Arsip <i
+                                class="lni lni-angle-double-right"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="arsip" class="about-section pt-10 pb-10"
+        style="background: url('/assets/img/bg3.jpg');">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6">
+                    <div class="about-content animate__animated animate__fadeInUp wow" data-wow-duration="1.5s">
+                        <div class="section-title mb-30 ">
+                            <h1 class="mb-25  ">Bantuan & Dukungan My UINSU</h1>
+                            <p class=" ">My UINSU menyediakan akses untuk melayanin permasalahan umum yang terjadi pada website/aplikasi ataupun akun pengguna dari seluruh aplikasi/website UINSU yang memiliki masalah </p>
+                        </div>
+                        <ul>
+                            <li class=" ">
+                                <i class="lni lni-checkmark-circle"></i>
+                                Lupa Password akun pengguna
+                            </li>
+                            <li class=" ">
+                                <i class="lni lni-checkmark-circle"></i>
+                                Kesalahan pada data pengguna
+                            </li>
+                            <li class=" ">
+                                <i class="lni lni-checkmark-circle"></i>
+                                Kendala saat penggunaan aplikasi
+                            </li>
+                            <li class=" ">
+                                <i class="lni lni-checkmark-circle"></i>
+                                Akun terblokir
+                            </li>
+                        </ul>
+                        <a href="/arsip" onclick="window.location.href='/arsip'"
+                            class="button  mt-20 radius-10  ">Bantuan & Dukungan <i
+                                class="lni lni-angle-double-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6">
+                    <div class="about-img text-lg-right  animate__animated animate__fadeInUp wow"
+                        data-wow-duration="1.5s">
+                        <div class="image-container">
+                            <img id="support" src="assets/img/support.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+
+  
+    <footer class="footer">
+        <div class="container">
+            <div class="widget-wrapper">
+                <div class="row">
+                    <div class="col-xl-3 col-md-6">
+                        <div class="footer-widget">
+                            <div class="logo mb-35">
+                                <a href="index.html"> <img src="/assets/img/logo.png" width="200px" alt=""> </a>
+                            </div>
+                            <p class="desc mb-35">UIN Sumatera Utara memiliki 8 Fakultas dan 1 Program Pascasarjana.
+                                UINSU adalah kampus islam yang memiliki moto “Smart Islamic University”</p>
+                            <ul class="socials">
+                                <li>
+                                    <a href="https://www.facebook.com/uinsuofficial/"> <i
+                                            class="lni lni-facebook-filled"></i> </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/UINSumutMedan"> <i class="lni lni-twitter-filled"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/uinsu_official/"> <i
+                                            class="lni lni-instagram-filled"></i> </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/channel/UCu-kpT7tJfg6y2tJ71e1vtQ"> <i
+                                            class="lni lni-youtube"></i> </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-2 offset-xl-1 col-md-5 offset-md-1 col-sm-6">
+                        <div class="footer-widget">
+                            <h3>Link</h3>
+                            <ul class="links">
+                                <li> <a href="javascript:void(0)">Beranda</a> </li>
+                                <li> <a href="javascript:void(0)">Arsip</a> </li>
+                                <li> <a href="javascript:void(0)">Pencarian</a> </li>
+                                <li> <a href="javascript:void(0)">Unggah</a> </li>
+                                <li> <a href="javascript:void(0)">Tentang Kami</a> </li>
+                                <li> <a href="javascript:void(0)">Login</a> </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 col-sm-6">
+                        <div class="footer-widget">
+                            <h3>Layanan</h3>
+                            <ul class="links">
+                                <li> <a href="javascript:void(0)">Portal SIA</a> </li>
+                                <li> <a href="javascript:void(0)">SI-SELMA</a> </li>
+                                <li> <a href="javascript:void(0)">E-LEARNING</a> </li>
+                                <li> <a href="javascript:void(0)">SI-JURNAL</a> </li>
+                                <li> <a href="javascript:void(0)">Repository</a> </li>
+                                <li> <a href="javascript:void(0)">SI-DAHLIA</a> </li>
+                                <li> <a href="javascript:void(0)">SI-PERPUS</a> </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="footer-widget">
+                            <h3>Kontak</h3>
+                            <ul>
+
+                                <li>humas@uinsu.ac.id</li>
+                                <li>Jl. Willem Iskandar Pasar V, Medan Estate</li>
+                            </ul>
+                            <div class="contact_map" style="width: 100%; height: 150px; margin-top: 25px;">
+                                <div class="gmap_canvas">
+                                    <iframe id="gmap_canvas"
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.923855729958!2d98.71849827371673!3d3.604906850184647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3031316be49d74e9%3A0x2f82fd7c9bd27f!2sUniversitas%20Islam%20Negeri%20Sumatera%20Utara%20Medan!5e0!3m2!1sid!2sid!4v1711774604762!5m2!1sid!2sid"
+                                        style="width: 100%;"></iframe>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="copy-right">
+                <p>Copyright © 2024 <a href="https://uinsu.ac.id/" rel="nofollow" target="_blank"> UIN Sumatera Utara
+                        Medan </a></p>
+            </div>
+
+        </div>
+    </footer>
+
+    <a href="#" class="scroll-top btn-hover">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+
+
+    <script src="/assets/js/bootstrap-5.0.0-beta2.min.js"></script>
+    <script src="/assets/js/count-up.min.js"></script>
+    <script src="/assets/js/glightbox.min.js"></script>
+    <script src="/assets/js/tiny-slider.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script src="/assets/js/pencarian.js"></script>
+
+    <script src="/assets/js/unggah.js"></script>
+    <script>
+
+    </script>
+
+
+</body>
+
+</html>
