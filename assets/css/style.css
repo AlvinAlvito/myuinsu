@@ -1546,7 +1546,7 @@ footer .copy-right a {
 
 /* =========== footer css =========== */
 .footer {
-  background-image: url("https://preview.uideck.com/items/bliss/assets/img/hero/hero-bg.jpg");
+  background-image: url("/assets/img/bg4.png");
   background-size: cover;
   background-position: top center;
   padding-top: 150px;
@@ -2339,7 +2339,7 @@ footer .copy-right a {
   
 }
 
-h1 {
+.card-carousel h1 {
   color: white;
   text-align: center;
   margin-top: 1em;
@@ -2368,7 +2368,7 @@ h1 {
 
 @media screen and (max-width: 640px) {
   .card-carousel {
-    margin-left: calc((100vw - var(--carousel-min-width) - 40px) / 2)
+    margin-left: calc((100vw - var(--carousel-min-width) - 100px) / 2)
   }
 }
 
