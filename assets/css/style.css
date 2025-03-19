@@ -1108,12 +1108,100 @@ ul .indicator::after {
   }
 }
 
+/* kerjasama */
+:root {
+  --card-height: 300px;
+  --card-width: calc(var(--card-height) / 1.5);
+}
+
+.cards {
+  width: var(--card-width);
+  height: var(--card-height);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0 36px;
+  perspective: 2500px;
+  margin: 0 50px;
+}
+
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wrapper {
+  transition: all 0.5s;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.cards:hover .wrapper {
+  transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+  box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+.wrapper::before,
+.wrapper::after {
+  content: "";
+  opacity: 0;
+  width: 100%;
+  height: 80px;
+  transition: all 0.5s;
+  position: absolute;
+  left: 0;
+}
+.wrapper::before {
+  top: 0;
+  height: 100%;
+  background-image: linear-gradient(to bottom, transparent 46%, rgb(12 13 19 / 15%) 68%, rgb(12 13 19 / 31%) 97%);
+}
+.wrapper::after {
+  bottom: 0;
+  opacity: 1;
+  background-image: linear-gradient(to bottom, transparent 46%, rgb(12 13 19 / 15%) 68%, rgb(12 13 19 / 31%) 97%);
+}
+
+.cards:hover .wrapper::before,
+.wrapper::after {
+  opacity: 1;
+}
+
+.cards:hover .wrapper::after {
+  height: 120px;
+}
+.title {
+  width: 100%;
+  transition: transform 0.5s;
+}
+.cards:hover .title {
+  transform: translate3d(0%, -50px, 100px);
+}
+
+.character {
+  width: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  position: absolute;
+  z-index: -1;
+}
+
+.cards:hover .character {
+  opacity: 1;
+  transform: translate3d(0%, -30%, 100px);
+}
+
 /* ============== hero-area ============ */
 .hero-section {
   position: relative;
   z-index: 1;
   padding: 100px 0 90px;
-  background-image: url("/assets/img/bg2.jpg");
+  background-image: url("/assets/img/bg2.png");
   background-repeat: no-repeat;
   background-position: left bottom;
   background-size: cover;
