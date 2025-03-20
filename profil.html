@@ -92,39 +92,40 @@
     </nav>
     <div class="navbar bottom-nav">
         <ul>
-            <li class="active">
+            <li>
                 <a onclick="window.location.href='informasi.html'">
                     <i class='bi bi-grid icon'></i>
                     <span class="titles">Informasi</span>
                     <i class='bi bi-grid-fill activeIcon'></i>
                 </a>
             </li>
-            <li class="{{ request()->is('arsip') ? 'active' : '' }}">
+            <li>
                 <a onclick="window.location.href='layanan.html'">
                     <i class='bi bi-layers icon'></i> 
                     <span class="titles">Layanan</span>
                     <i class='bi bi-layers-fill activeIcon'></i>
                 </a>
             </li>
-            <li class="{{ request()->is('pencarian') ? 'active' : '' }}">
+            <li> 
                 <a onclick="window.location.href='index.html'">                    
                     <img class="icon-home" src="/assets/img/icon-home2.png" alt="">
                 </a>
             </li>
-            <li class="{{ request()->is('unggah') ? 'active' : '' }}">
+            <li>
                 <a onclick="window.location.href='dukungan.html'">
                     <i class='bi bi-chat-square-text icon'></i>
                     <span class="titles">Dukungan</span>
                     <i class='bi bi-chat-square-text-fill activeIcon'></i>
                 </a>
             </li>
-            <li class="{{ request()->is('unggah') ? 'active' : '' }}">
+            <li>
                 <a onclick="window.location.href='login.html'">
                     <i class='bi bi-person icon'></i>
-                    <span class="titles">Proil</span>
+                    <span class="titles">Profil</span>
                     <i class='bi bi-person-fill activeIcon'></i>
                 </a>
             </li>
+            
     
         </ul>
     </div>
@@ -494,9 +495,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script src="assets/js/main.js"></script>
     <script src="assets/js/chatbot.js"></script>
     <script src="assets/js/card.js"></script>
+    <script src="assets/js/main.js"></script>
 
 
 </body>

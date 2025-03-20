@@ -54,39 +54,40 @@
 </nav>
 <div class="navbar bottom-nav">
     <ul>
-        <li class="active">
-            <a onclick="window.location.href='informasi.html'">
-                <i class='bi bi-grid icon'></i>
-                <span class="titles">Informasi</span>
-                <i class='bi bi-grid-fill activeIcon'></i>
-            </a>
-        </li>
-        <li class="{{ request()->is('arsip') ? 'active' : '' }}">
-            <a onclick="window.location.href='layanan.html'">
-                <i class='bi bi-layers icon'></i> 
-                <span class="titles">Layanan</span>
-                <i class='bi bi-layers-fill activeIcon'></i>
-            </a>
-        </li>
-        <li class="{{ request()->is('pencarian') ? 'active' : '' }}">
-            <a onclick="window.location.href='index.html'">                    
-                <img class="icon-home" src="/assets/img/icon-home2.png" alt="">
-            </a>
-        </li>
-        <li class="{{ request()->is('unggah') ? 'active' : '' }}">
-            <a onclick="window.location.href='dukungan.html'">
-                <i class='bi bi-chat-square-text icon'></i>
-                <span class="titles">Dukungan</span>
-                <i class='bi bi-chat-square-text-fill activeIcon'></i>
-            </a>
-        </li>
-        <li class="{{ request()->is('unggah') ? 'active' : '' }}">
-            <a onclick="window.location.href='login.html'">
-                <i class='bi bi-person icon'></i>
-                <span class="titles">Proil</span>
-                <i class='bi bi-person-fill activeIcon'></i>
-            </a>
-        </li>
+      <li>
+        <a onclick="window.location.href='informasi.html'">
+            <i class='bi bi-grid icon'></i>
+            <span class="titles">Informasi</span>
+            <i class='bi bi-grid-fill activeIcon'></i>
+        </a>
+    </li>
+    <li>
+        <a onclick="window.location.href='layanan.html'">
+            <i class='bi bi-layers icon'></i> 
+            <span class="titles">Layanan</span>
+            <i class='bi bi-layers-fill activeIcon'></i>
+        </a>
+    </li>
+    <li> 
+        <a onclick="window.location.href='index.html'">                    
+            <img class="icon-home" src="/assets/img/icon-home2.png" alt="">
+        </a>
+    </li>
+    <li>
+        <a onclick="window.location.href='dukungan.html'">
+            <i class='bi bi-chat-square-text icon'></i>
+            <span class="titles">Dukungan</span>
+            <i class='bi bi-chat-square-text-fill activeIcon'></i>
+        </a>
+    </li>
+    <li>
+        <a onclick="window.location.href='login.html'">
+            <i class='bi bi-person icon'></i>
+            <span class="titles">Profil</span>
+            <i class='bi bi-person-fill activeIcon'></i>
+        </a>
+    </li>
+    
 
     </ul>
 </div>
@@ -133,7 +134,7 @@
               <div class="input-boxes">
                 <div class="input-box" data-aos="fade-up" data-aos-duration="1200">
                   <i class="fas fa-envelope"></i>
-                  <input type="text" name="nim" id="NIM" placeholder="Masukan NIM" value="41144013" maxlength="12" required>
+                  <input type="text" name="nim" id="NIM" placeholder="Masukan NIM" value="" maxlength="12" required>
 
                     <div style="color: red; "></div>
 
@@ -196,6 +197,24 @@
       // Show initial text
       showText(currentIndex);
     });
+
+    document.addEventListener("DOMContentLoaded", function () {
+  // Ambil semua elemen <li> dalam menu
+  let menuItems = document.querySelectorAll("li");
+
+  // Ambil pathname dari URL saat ini (tanpa domain)
+  let currentPath = window.location.pathname.split("/").pop(); 
+
+  // Loop melalui setiap item menu
+  menuItems.forEach(function (menuItem) {
+      let link = menuItem.querySelector("a");
+
+      // Periksa apakah link ada dan href-nya cocok dengan currentPath
+      if (link && link.getAttribute("onclick")?.includes(currentPath)) {
+          menuItem.classList.add("active");
+      }
+  });
+});
 
 
     </script>

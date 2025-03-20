@@ -12,6 +12,20 @@ window.addEventListener("load", function () {
   }, 1500); // Jeda 1.5 detik (1500 milidetik)
 });
 
+$(document).ready(function () {
+  // Ambil pathname dari URL saat ini (misalnya "informasi.html")
+  let currentPath = window.location.pathname.split("/").pop();
+
+  // Loop setiap elemen <li>
+  $("li").each(function () {
+      let link = $(this).find("a");
+
+      // Cek apakah link memiliki onclick dengan halaman yang sesuai
+      if (link.attr("onclick") && link.attr("onclick").includes(currentPath)) {
+          $(this).addClass("active");
+      }
+  });
+});
 document.addEventListener("DOMContentLoaded", function () {
   function counterUp(element, start, end, duration) {
     let range = end - start;
@@ -178,4 +192,3 @@ window.addEventListener("load", function () {
   cu.start();
 })();
 
-// search button
