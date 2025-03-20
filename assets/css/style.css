@@ -8,7 +8,7 @@
 }
 /* 
 #pencarian {
-  background: url('/assets/img/bg2.jpg') no-repeat center center/cover;
+  background: url('assets/img/bg2.jpg') no-repeat center center/cover;
   background-attachment: fixed;
   height: 100vh;
   display: flex;
@@ -980,7 +980,7 @@ p {
   top: 0;
   height: 70px;
   width: 100vw;
-  background-image: url("/assets/img/bg2.jpg");
+  background-image: url("assets/img/bg2.jpg");
   background-repeat: no-repeat;
   background-position: left bottom;
   background-size: cover;
@@ -1180,7 +1180,7 @@ ul li a i.activeIcon {
   position: relative;
   z-index: 1;
   padding: 100px 0 90px;
-  background-image: url("/assets/img/bg2.png");
+  background-image: url("assets/img/bg2.png");
   background-repeat: no-repeat;
   background-position: left bottom;
   background-size: cover;
@@ -1496,7 +1496,7 @@ footer .copy-right a {
 
 /* ============== service css ==============*/
 .service-section {
-  background-image: url("https://preview.uideck.com/items/bliss/assets/img/service/service-bg.jpg");
+  background-image: url("https://preview.uideck.com/items/blissassets/img/service/service-bg.jpg");
 }
 
 .service-section .single-service {
@@ -1621,7 +1621,7 @@ footer .copy-right a {
 
 /* =========== footer css =========== */
 .footer {
-  background-image: url("/assets/img/bg4.png");
+  background-image: url("assets/img/bg4.png");
   background-size: cover;
   background-position: top center;
   padding-top: 150px;
