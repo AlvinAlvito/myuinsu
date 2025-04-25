@@ -46,10 +46,6 @@
             <span class="close-btn material-symbols-outlined">close</span>
         </header>
         <ul class="chatbox">
-            <li class="chat incoming">
-                <span class="material-symbols-outlined">smart_toy</span>
-                <p>Halo Sobat UINSU 👋<br />Ada yang bisa kami bantu?</p>
-            </li>
         </ul>
         <div class="chat-input">
             <textarea placeholder="Ketik pesan anda disini..." spellcheck="false" required></textarea>
@@ -62,10 +58,10 @@
             <img src="assets/img/logo.png" alt="">
         </div>
         <ul class="top-nav">
-            <li><a class="{{ request()->is('/') ? 'active-nav' : '' }}" onclick="window.location.href='/';">Beranda</a>
+            <li><a class="{{ request()->is('/') ? 'active-nav' : '' }}" onclick="window.location.href='index.html';">Beranda</a>
             </li>
             <li><a class="{{ request()->is('arsip') ? 'active-nav' : '' }}"
-                    onclick="window.location.href='index.html';">Informasi</a></li>
+                    onclick="window.location.href='informasi.html';">Informasi</a></li>
             <li><a class="{{ request()->is('pencarian') ? 'active-nav' : '' }}"
                     onclick="window.location.href='layanan.html';">Layanan</a></li>
             <li><a class="{{ request()->is('unggah') ? 'active-nav' : '' }}"
@@ -513,7 +509,7 @@
                     <div class="about-img text-lg-right  animate__animated animate__fadeInUp wow"
                         data-wow-duration="1.5s">
                         <div class="image-container">
-                            <img id="support" src=assets/img/support.png" alt="">
+                            <img id="support" src="assets/img/support.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -679,9 +675,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script src=assets/js/chatbot.js"></script>
-    <script src=assets/js/card.js"></script>
-    <script src=assets/js/main.js"></script>
+    <script src="assets/js/chatbot.js"></script>
+    <script src="assets/js/card.js"></script>
+    <script src="assets/js/main.js"></script>
 
 
 </body>
